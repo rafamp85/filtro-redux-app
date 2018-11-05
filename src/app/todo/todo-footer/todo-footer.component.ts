@@ -13,6 +13,7 @@ import { Todo } from '../model/todo.model';
   templateUrl: './todo-footer.component.html',
   styles: []
 })
+
 export class TodoFooterComponent implements OnInit {
 
   pendientes: number;
@@ -38,7 +39,7 @@ export class TodoFooterComponent implements OnInit {
     this.pendientes = todos.filter( todo => !todo.completado ).length;
   }
 
-  borrarTodo( todos: Todo[] ) {
+  borrarTodo( ) {
     const accion = new fromTodo.BorrarAllTodoAction();
     this.store.dispatch( accion );
   }
